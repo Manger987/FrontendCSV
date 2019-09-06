@@ -1,0 +1,22 @@
+<section id="items" class="mt-5">
+    <div class="container">
+      <div class="row">
+        <br>
+        Hola
+        <div class="mt-5">
+            <canvas #lineCanvas width="400" height="400"></canvas>
+        </div>
+        <hr>
+      </div>
+      <div class="row">
+        <select formControlName="itemControl" (change)="onChargeChartItem($event.target.value)">
+          <option [value]="item.codigo" *ngFor="let item of items">{{item.descripcion}}</option>
+        </select>
+      </div>
+      <div class="row">
+          <div class="mt-5">
+              <canvas #lineCanvasByItem width="400" height="400"></canvas>
+          </div>
+      </div>
+    </div>
+  </section>
