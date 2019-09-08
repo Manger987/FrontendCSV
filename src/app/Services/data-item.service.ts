@@ -12,10 +12,10 @@ export class DataItemService {
   private items: Observable<itemInterface[]>;
 
   getAllItems(): Observable<itemInterface[]> {
-    return this.http.get<itemInterface[]>('http://localhost:2000/items/getItems')
+    return this.http.get<itemInterface[]>('https://backendcsv.herokuapp.com/items/')
   }
 
   getItemById(item): any {
-    return this.http.get<itemInterface[]>(`http://localhost:2000/ventas/abustos/getSalesByItem/${item}`)//add option user 
+    return this.http.get<itemInterface[]>(`https://backendcsv.herokuapp.com/ventas/abustos/getSalesByItem/${item}`)//add option user 
   }
 }

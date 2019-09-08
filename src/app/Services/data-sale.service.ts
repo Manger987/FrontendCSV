@@ -12,7 +12,7 @@ export class DataSaleService {
   private sales: Observable<salesInterface[]>;
 
   getAllSalles(): Observable<salesInterface[]> {
-    return this.http.get<salesInterface[]>('http://localhost:2000/ventas/getSalesBySeller/abustos')
+    return this.http.get<salesInterface[]>('https://backendcsv.herokuapp.com/ventas/abustos')
   }
 
 }
