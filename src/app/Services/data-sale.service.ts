@@ -11,8 +11,8 @@ export class DataSaleService {
   constructor(private http: HttpClient) { }
   private sales: Observable<salesInterface[]>;
 
-  getAllSalles(): Observable<salesInterface[]> {
-    return this.http.get<salesInterface[]>('https://backendcsv.herokuapp.com/ventas/abustos')
+  getAllSalles(usuario): Observable<salesInterface[]> {
+    return this.http.get<salesInterface[]>('https://backendcsv.herokuapp.com/ventas/'+usuario)
   }
 
 }

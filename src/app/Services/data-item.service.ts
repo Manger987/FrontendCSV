@@ -15,7 +15,11 @@ export class DataItemService {
     return this.http.get<itemInterface[]>('https://backendcsv.herokuapp.com/items/')
   }
 
-  getItemById(item): any {
-    return this.http.get<itemInterface[]>(`https://backendcsv.herokuapp.com/ventas/abustos/getSalesByItem/${item}`)//add option user 
+  getItemById(usuario,item): any {
+    return this.http.get<itemInterface[]>(`https://backendcsv.herokuapp.com/ventas/${usuario}/getSalesByItem/${item}`)//add option user 
+  }
+
+  getLastSales(): any {
+    return this.http.get<itemInterface[]>(`https://backendcsv.herokuapp.com/ventas/`)//add option user 
   }
 }
