@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { userInterface } from 'src/app/Models/users';
+import { userInterface } from "src/app/Models/users";
 import { Router } from '@angular/router';
 
 @Injectable({
