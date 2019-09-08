@@ -70,6 +70,7 @@ export class SalesComponent implements OnInit {
   });
 
   this.getItems();
+  this.onChargeChartUltimas();
   }
 
   getItems(){
