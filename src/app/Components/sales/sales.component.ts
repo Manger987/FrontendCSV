@@ -2,11 +2,12 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { salesInterface } from 'src/app/Models/sales'
 import { itemInterface } from 'src/app/Models/items'
+import { userInterface } from 'src/app/Models/users';
 import { DataSaleService } from 'src/app/Services/data-sale.service'
 import { DataItemService } from './../../Services/data-item.service';
 import { map } from 'rxjs/operators';
 import { DataLoginService } from './../../Services/data-login.service';
-import { userInterface } from 'src/app/Models/users';
+
 
 @Component({
   selector: 'app-sales',

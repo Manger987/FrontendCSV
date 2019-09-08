@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DataLoginService } from 'src/app/Services/data-login.service';
 import { Router } from '@angular/router';
-import { userInterface } from "src/app/Models/users";
+import { userInterface } from 'src/app/Models/users';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
