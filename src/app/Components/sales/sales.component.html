@@ -2,14 +2,18 @@
     <div class="container">
       <div class="row">
         <br>
-        Hola
         <div class="mt-5">
+            <h3>Ventas de {{userLogged.usuario}}</h3>
             <canvas #lineCanvas width="400" height="400"></canvas>
+        </div>
+        <div class="mt-5">
+            <h3>Ultimas Ventas</h3>
+            <canvas #lineCanvasUltimas width="400" height="400"></canvas>
         </div>
         <hr>
       </div>
       <div class="row">
-        <select formControlName="itemControl" (change)="onChargeChartItem($event.target.value)">
+        <select (change)="onChargeChartItem($event.target.value)">
           <option [value]="item.codigo" *ngFor="let item of items">{{item.descripcion}}</option>
         </select>
       </div>

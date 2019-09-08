@@ -1,4 +1,4 @@
-export interface itemInterface{
+export interface userInterface {
     usuario?: String;
     nombre?: String;
     apellido?: String;
