@@ -124,7 +124,8 @@ export class SalesComponent implements OnInit {
                 label: 'cantidad vendidas',
                 data: cantidad,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                type: 'line'
+                type: 'line',
+                hitRadius : 1
             }, {
                 label: 'total vendidos',
                 data: invoicedAmount,
@@ -134,14 +135,35 @@ export class SalesComponent implements OnInit {
             labels: fechas
         },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
+          callbacks: {
+            label: function (t, d) {
+              var xLabel = d.datasets[t.datasetIndex].label;
+              var yLabel = t.yLabel >= 1000 ? '$' + t.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '$' + t.yLabel;
+              return xLabel + ': ' + yLabel;
             }
-        }
+          },
+          legend: {
+            display: false,
+            position: 'top'
+          },
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                callback: function (value, index, values) {
+                  if (parseInt(value) >= 1000) {
+                    return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  } else { return '$' + value; }
+                }
+              }
+            }]
+          }
+        },
+        plugins: [{
+          beforeDraw: function (chart) {
+            var labels = chart.data.labels;
+          }
+        }]
       })  
     })
   }
