@@ -80,6 +80,7 @@ export class SalesComponent implements OnInit {
   }
   onChargeChartItem(item){
     this.itemService.getItemById(this.userLogged.usuario,item).subscribe(salesItem => {
+      console.log(salesItem)
       let fechas = salesItem.map(res => res.fecha)
       let invoicedAmount = salesItem.map(res => res.invoicedAmount)
       let cantidad = salesItem.map(res => res.cantidad)
